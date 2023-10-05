@@ -1,0 +1,9 @@
+<div>
+  <!-- <p>Please provide a reason for pausing the work order.</p> -->
+  <p>Are you sure you want to change the status of the job to {{newStatus}}?</p>
+  <div class="example-button-row">
+
+    <button (click)="changeStatus()" mat-raised-button>Yes</button>
+    <button (click)="cancelStatusChange()" mat-raised-button>No</button>
+
+  </div>

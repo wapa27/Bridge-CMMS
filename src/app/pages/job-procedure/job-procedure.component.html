@@ -1,0 +1,13 @@
+<div class="list-wrapper">
+  <div class="header-wrapper">
+    <h2 class="h2">{{this.orderId}}</h2>
+  </div>
+</div>
+<div style="text-align: center; margin-top: 15px;">
+  <h1 style="font-weight:500">Job Procedure</h1>
+</div>
+<section style="margin-right: 15px; margin-left: 15px;">
+  <div *ngFor="let task of testTasks; let isFirst = first">
+    <app-job-procedure-item [task]="task"></app-job-procedure-item>
+  </div>
+</section>

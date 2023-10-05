@@ -1,0 +1,25 @@
+<div class="header-wrapper">
+  <h2 class="h2">Schedule</h2>
+</div>
+<mat-card class="demo-inline-calendar-card">
+  <mat-calendar (selectedChange)="selected = $event"></mat-calendar>
+</mat-card>
+<div class="header-wrapper">
+  <h2 class="h2">{{selected | date:'longDate' }} Work Items</h2>
+</div>
+<mat-list-item class='list-item' *ngFor="let workOrder of testWorkOrders; last as last">
+  <div style="display: flex; justify-content: left; padding-left: 10px">
+    <div style="height: fit-content; margin: 0.5% 2% 0 0;">
+      <i *ngIf="workOrder=='Install Door at terminal A, berth 1, door 1'" class="fas fa-wrench icon"
+        style="color:black"></i>
+      <i *ngIf=" workOrder=='Install Door at terminal A, berth 1, door 2'" class=" fas fa-wrench icon"
+        style="color: black;"></i>
+      <i *ngIf="workOrder=='Install Door at terminal A, berth 1, door 3'" class="fas fa-wrench icon"
+        style="color: black;"></i>
+      <i *ngIf="workOrder=='Maintenance Header 1 at terminal B'" class="fas fa-wrench icon" style="color: black;"></i>
+      <i *ngIf="workOrder=='Maintenance Header 2 at terminal B'" class="fas fa-wrench icon" style="color: black;"></i>
+    </div>
+
+    <h3 mat-line style="color: black; margin: 0 0 0 7px; width: fit-content">{{workOrder}}</h3>
+  </div>
+</mat-list-item>

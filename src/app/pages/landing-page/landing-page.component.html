@@ -1,0 +1,41 @@
+<div class="list-wrapper">
+  <div class="header-wrapper">
+    <h2 class="h2">Announcements</h2>
+  </div>
+  <mat-list-item class='list-item' *ngFor="let announcement of testAnnouncements; last as last">
+    <div style="display: flex; justify-content: left; padding-left: 10px">
+      <div style="height: fit-content; margin: 0.5% 2% 0 0;">
+        <i *ngIf="announcement=='Fix Header at terminal C, berth 4, door 2'" class="fas fa-wrench icon"
+          style="color:black"></i>
+        <i *ngIf=" announcement=='All Hands Meeting featuring president of DIA'" class=" fas fa-bullhorn icon"
+          style="color: black;"></i>
+        <i *ngIf="announcement=='Replace Transformer at terminal C, berth 4, door 2'" class="fas fa-wrench icon"
+          style="color: black;"></i>
+      </div>
+
+      <h3 mat-line style="color: black; margin: 0 0 0 7px; width: fit-content">{{announcement}}</h3>
+    </div>
+  </mat-list-item>
+</div>
+<div class="list-wrapper">
+  <div class="header-wrapper">
+    <h2 class="h2">Today's Work Orders</h2>
+  </div>
+  <mat-list-item class='list-item' *ngFor="let workOrder of testWorkOrders; last as last"
+    (click)="this.goToWorkOrderInfo(workOrder)">
+    <div style="display: flex; justify-content: left; padding-left: 10px">
+      <div style="height: fit-content; margin: 0.5% 2% 0 0;">
+        <i *ngIf="workOrder=='Install Door at terminal A, berth 1, door 1'" class="fas fa-wrench icon"
+          style="color:black"></i>
+        <i *ngIf=" workOrder=='Install Door at terminal A, berth 1, door 2'" class=" fas fa-wrench icon"
+          style="color: black;"></i>
+        <i *ngIf="workOrder=='Install Door at terminal A, berth 1, door 3'" class="fas fa-wrench icon"
+          style="color: black;"></i>
+        <i *ngIf="workOrder=='Maintenance Header 1 at terminal B'" class="fas fa-wrench icon" style="color: black;"></i>
+        <i *ngIf="workOrder=='Maintenance Header 2 at terminal B'" class="fas fa-wrench icon" style="color: black;"></i>
+      </div>
+
+      <h3 mat-line style="color: black; margin: 0 0 0 7px; width: fit-content">{{workOrder}}</h3>
+    </div>
+  </mat-list-item>
+</div>

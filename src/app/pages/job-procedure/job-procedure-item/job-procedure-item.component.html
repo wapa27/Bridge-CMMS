@@ -1,0 +1,109 @@
+<!-- Instruction Task -->
+<div *ngIf="task.taskType==='INSTRUCTION_TASK'" class="task-item">
+  <div style="display: flex; justify-content: space-between;">
+    <h3>{{task.taskName}}</h3>
+    <mat-icon class="custom-mat-icon" (click)="addComment()">speaker_notes</mat-icon>
+  </div>
+  <div style="height: fit-content;">
+    <div class="icon-wrapper" style="display: flex; justify-content: space-evenly;">
+      <button mat-raised-button *ngIf="!isPass" class="status-button" (click)="togglePass()">
+        <div style="display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: center;">
+            <mat-icon>check</mat-icon>
+          </div>
+          <span class="button-icon">Pass</span>
+        </div>
+      </button>
+      <button mat-raised-button color="primary" *ngIf="isPass" class="status-button">
+        <div style="display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: center;">
+            <mat-icon>check</mat-icon>
+          </div>
+          <span class="button-icon">Pass</span>
+        </div>
+      </button>
+      <button mat-raised-button *ngIf="!isFlag" class="status-button" (click)="toggleFlag()">
+        <div style="display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: center;">
+            <mat-icon>outlined_flag</mat-icon>
+          </div>
+          <span class="button-icon">Flag</span>
+        </div>
+      </button>
+      <button mat-raised-button color="accent" *ngIf="isFlag" class="status-button">
+        <div style="display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: center;">
+            <mat-icon>outlined_flag</mat-icon>
+          </div>
+          <span class="button-icon">Flag</span>
+        </div>
+      </button>
+      <button mat-raised-button *ngIf="!isFail" class="status-button" (click)="toggleFail()">
+        <div style="display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: center;">
+            <mat-icon>warning</mat-icon>
+          </div>
+          <span class="button-icon">Fail</span>
+        </div>
+      </button>
+      <button mat-raised-button color="warn" *ngIf="isFail" class="status-button">
+        <div style="display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: center;">
+            <mat-icon>warning</mat-icon>
+          </div>
+          <span class="button-icon">Fail</span>
+        </div>
+      </button>
+    </div>
+  </div>
+  <ng-container *ngIf="task.comments.length>0 || isAddComment">
+    <h4>Comments:</h4>
+    <div *ngFor="let comment of task.comments" style="margin-left: 5px;">
+      <span>{{comment.user}} - {{comment.date | date:"short"}}</span>
+      <p>{{comment.comment}}</p>
+    </div>
+    <div *ngIf="isAddComment" style="padding: 0 5px;">
+      <textarea style="width: -webkit-fill-available;" #userComment></textarea>
+      <div style="display: flex; justify-content: end;">
+        <button mat-raised-button color="warn" (click)="cancelComment()" style="margin-right:5px;">Cancel</button>
+        <button mat-raised-button color="primary" (click)="pushComment(userComment.value)">Comment</button>
+        <!-- <button mat-raised-button color="primary" *ngIf="userComment.value.length > 0">Comment</button>
+        <button *ngIf="userComment.value.length == 0">Comment</button> -->
+      </div>
+    </div>
+  </ng-container>
+</div>
+<!-- End of Instruction Task -->
+<!-- Photo Task -->
+<div *ngIf="task.taskType==='PHOTO_TASK'" class="task-item">
+  <div style="display: flex; justify-content: space-between;">
+    <h3>{{task.taskName}}</h3>
+    <mat-icon class="custom-mat-icon" (click)="addComment()">speaker_notes</mat-icon>
+  </div>
+  <div style="text-align: center;">
+    <button mat-raised-button style="padding-top: 8px; margin-top: -8px;">
+      <div style="display: flex; flex-direction: column;">
+        <div style="display: flex; justify-content: center;">
+          <mat-icon>photo_camera</mat-icon>
+        </div>
+        <span class="button-icon">Camera</span>
+      </div>
+    </button>
+  </div>
+  <ng-container *ngIf="task.comments.length>0 || isAddComment">
+    <h4>Comments:</h4>
+    <div *ngFor="let comment of task.comments" style="margin-left: 5px;">
+      <span>{{comment.user}} - {{comment.date | date:"short"}}</span>
+      <p>{{comment.comment}}</p>
+    </div>
+    <div *ngIf="isAddComment" style="padding: 0 5px;">
+      <textarea style="width: -webkit-fill-available;" #userComment></textarea>
+      <div style="display: flex; justify-content: end;">
+        <button mat-raised-button color="warn" (click)="cancelComment()" style="margin-right:5px;">Cancel</button>
+        <button mat-raised-button color="primary" (click)="pushComment(userComment.value)">Comment</button>
+        <!-- <button mat-raised-button color="primary" *ngIf="userComment.value.length > 0">Comment</button>
+        <button *ngIf="userComment.value.length == 0">Comment</button> -->
+      </div>
+    </div>
+  </ng-container>
+</div>

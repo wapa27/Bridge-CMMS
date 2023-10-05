@@ -1,0 +1,49 @@
+@use '@angular/material' as mat;
+
+.box-shadow {
+  // box-shadow: 0px -3px 5px 0px rgba(47, 100, 249, 0.3);
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  background-color: #ffffff;
+  height: fit-content;
+}
+
+mat-icon {
+  color: #b9bcc2;
+}
+
+
+.button-text {
+  color: rgb(82, 82, 82);
+  margin-top: -8px;
+  // height: 0;
+  font-weight: 400;
+  // font-size: 14px;
+  margin-bottom: 0;
+}
+
+.interior-button-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.icon-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.exterior-button-wrapper {
+  width: 25%;
+  // height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.mat-button-wrapper > span {
+  height: 100% !important;
+}

@@ -24,12 +24,13 @@
           <p class="button-text" [ngStyle]="{'color': (this.calendarSelected) ? 'blue' : 'grey'}">Calendar</p>
         </div>
       </button>
-      <button mat-icon-button class="button exterior-button-wrapper" aria-label="Example icon-button with share icon">
+      <button mat-icon-button class="button exterior-button-wrapper" aria-label="Example icon-button with share icon"
+        routerLink="/item-lookup">
         <div class="interior-button-wrapper">
           <div class="icon-wrapper">
-            <mat-icon [ngStyle]="{'color': (this.messagesSelected) ? 'blue' : 'grey'}"> message</mat-icon>
+            <mat-icon [ngStyle]="{'color': (this.lookupSelected) ? 'blue' : 'grey'}">location_searching</mat-icon>
           </div>
-          <p class="button-text" [ngStyle]="{'color': (this.messagesSelected) ? 'blue' : 'grey'}">Messages</p>
+          <p class="button-text" [ngStyle]="{'color': (this.lookupSelected) ? 'blue' : 'grey'}">Lookup</p>
         </div>
       </button>
       <button mat-icon-button class="button exterior-button-wrapper" aria-label="Example icon-button with share icon">

@@ -4,12 +4,14 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
 import { ScheduleComponent } from './pages/schedule/schedule.component';
 import { WorkOrderInfoComponent } from './pages/work-order-info/work-order-info.component';
 import { JobProcedureComponent } from './pages/job-procedure/job-procedure.component';
+import { ItemLookupComponent } from './pages/item-lookup/item-lookup.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
   { path: 'schedule', component: ScheduleComponent },
   { path: 'work-order-info/:id', component: WorkOrderInfoComponent },
-  { path: 'job-procedure/:id', component: JobProcedureComponent }
+  { path: 'job-procedure/:id', component: JobProcedureComponent },
+  { path: 'item-lookup', component: ItemLookupComponent }
 ];
 
 @NgModule({

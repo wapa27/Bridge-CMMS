@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { WorkOrderStatusDialogComponent } from './work-order-status-dialog/work-order-status-dialog.component';
 import { Router } from '@angular/router';
+import { UserComment } from 'src/app/model/user-comment';
 
 
 
@@ -18,6 +19,16 @@ export class WorkOrderInfoComponent implements OnInit {
   isPaused: boolean = false;
   isOngoing: boolean = false;
   isDone: boolean = false;
+
+  userComments: UserComment[] = [
+    new UserComment('User 1', new Date(), 'Testing Comment 1'),
+    new UserComment('User 2', new Date(), 'Testing Comment 2'),
+    new UserComment('User 3', new Date(), 'Testing Comment 3'),
+    new UserComment('User 4', new Date(), 'Testing Comment 4'),
+    new UserComment('User 5', new Date(), 'Testing Comment 5'),
+    new UserComment('User 6', new Date(), 'Testing Comment 6'),
+    new UserComment('User 7', new Date(), 'Testing Comment 7')
+  ];
 
   constructor(private route: ActivatedRoute,
     private router: Router,

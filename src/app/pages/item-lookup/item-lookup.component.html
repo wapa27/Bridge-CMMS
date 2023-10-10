@@ -1,0 +1,24 @@
+<div class="header-wrapper">
+  <h2 class="h2">Item Lookup</h2>
+</div>
+<div>
+  <div style="display: flex; justify-content: center;">
+    <input type="text" placeholder="Search for component" class="search-bar" #filter>
+  </div>
+  <div style="display: flex; justify-content: end;">
+    <button mat-raised-button color="primary" class="search-button">Search</button>
+    <button mat-raised-button color="primary" class="search-button">QR Search</button>
+  </div>
+</div>
+<!-- <div>
+  <ul>
+    <li *ngFor="let item of searchItem" #item (click)="getCategoryItems(item)">
+      {{item}}
+      <ul *ngIf="isCategoryExpanded(item)">
+        <li *ngFor="let subItem of getCategoryItems(item)">
+          {{subItem}}
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div> -->

@@ -24,6 +24,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { JobProcedureComponent } from './pages/job-procedure/job-procedure.component';
 import { JobProcedureDialogComponent } from './pages/job-procedure/job-procedure-dialog/job-procedure-dialog.component';
 import { JobProcedureItemComponent } from './pages/job-procedure/job-procedure-item/job-procedure-item.component';
+import { ItemLookupComponent } from './pages/item-lookup/item-lookup.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { JobProcedureItemComponent } from './pages/job-procedure/job-procedure-i
     WorkOrderStatusDialogComponent,
     JobProcedureComponent,
     JobProcedureDialogComponent,
-    JobProcedureItemComponent
+    JobProcedureItemComponent,
+    ItemLookupComponent
   ],
   imports: [
     BrowserModule,

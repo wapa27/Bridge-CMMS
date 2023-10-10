@@ -13,7 +13,7 @@ export class BottomNavigationBarComponent implements OnInit {
 
   tasksSelected: boolean = false;
   calendarSelected: boolean = false;
-  messagesSelected: boolean = false;
+  lookupSelected: boolean = false;
   moreSelected: boolean = false;
 
   constructor(private router: Router) { }
@@ -23,7 +23,7 @@ export class BottomNavigationBarComponent implements OnInit {
     this.router.events.pipe(
       filter((event: any) => event instanceof NavigationEnd)
     ).subscribe((event: NavigationEnd) => {
-      this.updateSelectedIcon(event.url)
+      this.updateSelectedIcon(event.url);
     });
   }
 
@@ -33,13 +33,15 @@ export class BottomNavigationBarComponent implements OnInit {
       this.tasksSelected = true;
     } else if (newURL.startsWith('/schedule')) {
       this.calendarSelected = true;
+    } else if (newURL.startsWith('/item-lookup')) {
+      this.lookupSelected = true;
     }
   }
 
   disableAllOptions() {
     this.tasksSelected = false;
     this.calendarSelected = false;
-    this.messagesSelected = false;
+    this.lookupSelected = false;
     this.moreSelected = false;
   }
 

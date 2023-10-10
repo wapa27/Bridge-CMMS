@@ -23,10 +23,6 @@
       <div style="border: 1px solid grey; border-radius: 4%; width: 75%; margin: auto; margin-top: 30px;">
         <div style="display: flex; justify-content: center;">
           <table style="text-align: center; width: 100%;">
-            <!-- <tr>
-            <th>Urgency</th>
-            <th>High</th>
-          </tr> -->
             <tr>
               <td>Urgency</td>
               <td>High</td>
@@ -56,6 +52,10 @@
       <ng-template mat-tab-label>
         Comments
       </ng-template>
+      <div *ngFor="let comment of userComments" class="user-comment">
+        <span>{{comment.user}} - {{comment.date | date:"short"}}</span>
+        <p>{{comment.comment}}</p>
+      </div>
     </mat-tab>
   </mat-tab-group>
 </div>

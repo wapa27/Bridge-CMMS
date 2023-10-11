@@ -10,15 +10,11 @@
     <button mat-raised-button color="primary" class="search-button">QR Search</button>
   </div>
 </div>
-<!-- <div>
+<div>
   <ul>
-    <li *ngFor="let item of searchItem" #item (click)="getCategoryItems(item)">
+    <li *ngFor="let item of searchItem" #item (click)="getCategoryItems(item)" class="list-item">
       {{item}}
-      <ul *ngIf="isCategoryExpanded(item)">
-        <li *ngFor="let subItem of getCategoryItems(item)">
-          {{subItem}}
-        </li>
-      </ul>
     </li>
   </ul>
-</div> -->
+  <!-- Should probably do another <ul> here with the condition that the items are components (rather than locations), and selecting will take user to item description -->
+</div>

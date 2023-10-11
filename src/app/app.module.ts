@@ -25,6 +25,7 @@ import { JobProcedureComponent } from './pages/job-procedure/job-procedure.compo
 import { JobProcedureDialogComponent } from './pages/job-procedure/job-procedure-dialog/job-procedure-dialog.component';
 import { JobProcedureItemComponent } from './pages/job-procedure/job-procedure-item/job-procedure-item.component';
 import { ItemLookupComponent } from './pages/item-lookup/item-lookup.component';
+import { ComponentInfoComponent } from './pages/component-info/component-info.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ItemLookupComponent } from './pages/item-lookup/item-lookup.component';
     JobProcedureComponent,
     JobProcedureDialogComponent,
     JobProcedureItemComponent,
-    ItemLookupComponent
+    ItemLookupComponent,
+    ComponentInfoComponent
   ],
   imports: [
     BrowserModule,

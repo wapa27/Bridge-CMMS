@@ -18,6 +18,23 @@ export class ItemLookupComponent implements OnInit {
     'Hartfield Jackson International',
   ];
 
+  public itemLookup(userInput: string) {
+
+  }
+
+  public getCategoryItems(parentItem: string) {
+    // API call to retrieve items
+    // Replace old searchItems with new ones
+    this.searchItem = [
+      'Rental Car Station',
+      '24th Street',
+      'Terminal 3',
+      'Terminal 4',
+      'West Economy Parking',
+      'East Economy Parking'
+    ]
+  }
+
   // activeCategoryItem: Map<string, string[]> = new Map();
   // isActiveCategoryItem: Map<string, boolean> = new Map();
 

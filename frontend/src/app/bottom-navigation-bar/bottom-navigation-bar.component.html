@@ -1,0 +1,46 @@
+<div style="height:91%; overflow: scroll;">
+  <router-outlet></router-outlet>
+</div>
+
+<div style="position: fixed; bottom: 0; width: 100%; height: 9%;">
+  <div
+    style="display: flex; flex-direction: column; justify-content: center; height: 100%; border-top: 1px solid gray;">
+    <mat-toolbar color="primary" class="box-shadow" style="height: 100%;">
+      <button mat-icon-button class="button exterior-button-wrapper" aria-label="Example icon-button with menu icon"
+        routerLink="/">
+        <div class="interior-button-wrapper">
+          <div class="icon-wrapper">
+            <mat-icon [ngStyle]="{'color': (this.tasksSelected) ? 'blue' : 'grey'}">home</mat-icon>
+          </div>
+          <p class="button-text" [ngStyle]="{'color': (this.tasksSelected) ? 'blue' : 'grey'}">Home</p>
+        </div>
+      </button>
+      <button mat-icon-button class="button favorite-icon exterior-button-wrapper"
+        aria-label="Example icon-button with heart icon" routerLink="/schedule">
+        <div class="interior-button-wrapper">
+          <div class="icon-wrapper">
+            <mat-icon [ngStyle]="{'color': (this.calendarSelected) ? 'blue' : 'grey'}">calendar_today</mat-icon>
+          </div>
+          <p class="button-text" [ngStyle]="{'color': (this.calendarSelected) ? 'blue' : 'grey'}">Calendar</p>
+        </div>
+      </button>
+      <button mat-icon-button class="button exterior-button-wrapper" aria-label="Example icon-button with share icon"
+        routerLink="/item-lookup">
+        <div class="interior-button-wrapper">
+          <div class="icon-wrapper">
+            <mat-icon [ngStyle]="{'color': (this.lookupSelected) ? 'blue' : 'grey'}">location_searching</mat-icon>
+          </div>
+          <p class="button-text" [ngStyle]="{'color': (this.lookupSelected) ? 'blue' : 'grey'}">Lookup</p>
+        </div>
+      </button>
+      <button mat-icon-button class="button exterior-button-wrapper" aria-label="Example icon-button with share icon">
+        <div class="interior-button-wrapper">
+          <div class="icon-wrapper">
+            <mat-icon [ngStyle]="{'color': (this.moreSelected) ? 'blue' : 'grey'}">settings</mat-icon>
+          </div>
+          <p class="button-text" [ngStyle]="{'color': (this.moreSelected) ? 'blue' : 'grey'}">Settings</p>
+        </div>
+      </button>
+    </mat-toolbar>
+  </div>
+</div>

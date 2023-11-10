@@ -27,7 +27,12 @@ import { JobProcedureItemComponent } from './pages/job-procedure/job-procedure-i
 import { ItemLookupComponent } from './pages/item-lookup/item-lookup.component';
 import { ComponentInfoComponent } from './pages/component-info/component-info.component';
 import { AnnouncementPageComponent } from './pages/announcement-page/announcement-page.component';
-import { MatTableModule } from '@angular/material/table'  
+import { MatTableModule } from '@angular/material/table';
+import { SettingsComponent } from './pages/settings/settings.component'  
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+
 
 
 @NgModule({
@@ -45,6 +50,7 @@ import { MatTableModule } from '@angular/material/table'
     ItemLookupComponent,
     ComponentInfoComponent,
     AnnouncementPageComponent,
+    SettingsComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,7 +67,10 @@ import { MatTableModule } from '@angular/material/table'
     MatDatepickerModule,
     MatNativeDateModule,
     MatTabsModule,
-    MatTableModule
+    MatTableModule,
+    MatExpansionModule,
+    MatFormFieldModule,
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

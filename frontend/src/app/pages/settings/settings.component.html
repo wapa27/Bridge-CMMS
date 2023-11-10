@@ -1,0 +1,49 @@
+<div class="header-wrapper">
+    <h2 class="h2">Settings</h2>
+</div>
+<div style="display: flex; justify-content: center; margin-top: 10px;">
+    <div style="width: 90%;">
+        <mat-accordion>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                <mat-panel-title>
+                    User Details
+                </mat-panel-title>
+                <mat-panel-description>
+                    View and Edit
+                </mat-panel-description>
+                </mat-expansion-panel-header>
+                <ng-container *ngIf="isEditUserDetails">
+                    <div style="width: 100%;">
+                        <label for="fname">Name:</label>
+                        <input type="text" id="fname" placeholder="{{name}}" style="width: 100%;"><br><br>
+                    </div>
+                    <div style="width: 100%;">
+                        <label for="email">Email:</label>
+                        <input type="text" id="email" name="email" placeholder="{{email}}" style="width: 100%;"><br><br>
+                    </div>
+                    <div style="width: 100%;">
+                        <label for="phoneNumber">Phone Number:</label>
+                        <input type="text" id="phoneNumber" name="phoneNumber" placeholder="{{number}}" style="width: 100%;"><br><br>
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="!isEditUserDetails">
+                    <p>Name: {{this.name}}</p>
+                    <p>Email: {{this.email}}</p>
+                    <p>Phone Number: {{this.number}}</p>
+                </ng-container>
+                <!-- <input type="submit" value="Submit">   -->
+                <div style="display: flex; justify-content: flex-end;">
+                    <button mat-raised-button *ngIf="!isEditUserDetails" (click)="toggleUserEdit()">Edit</button>
+                    <div *ngIf="isEditUserDetails" style="padding: 0 5px;">
+                        <button mat-raised-button style="margin-right:5px;" (click)="toggleUserEdit()">Cancel</button>
+                        <button mat-raised-button color="primary">Save Changes</button>
+                    </div>
+                </div>
+            </mat-expansion-panel>
+        </mat-accordion>
+        <div style="margin-top: 20px;">
+            <mat-slide-toggle>Enable Notifications</mat-slide-toggle>
+        </div>
+    </div>
+</div>

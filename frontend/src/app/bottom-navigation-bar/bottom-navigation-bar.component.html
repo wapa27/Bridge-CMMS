@@ -33,12 +33,13 @@
           <p class="button-text" [ngStyle]="{'color': (this.lookupSelected) ? 'blue' : 'grey'}">Lookup</p>
         </div>
       </button>
-      <button mat-icon-button class="button exterior-button-wrapper" aria-label="Example icon-button with share icon">
+      <button mat-icon-button class="button exterior-button-wrapper" aria-label="Example icon-button with share icon"
+        routerLink="settings">
         <div class="interior-button-wrapper">
           <div class="icon-wrapper">
-            <mat-icon [ngStyle]="{'color': (this.moreSelected) ? 'blue' : 'grey'}">settings</mat-icon>
+            <mat-icon [ngStyle]="{'color': (this.settingsSelected) ? 'blue' : 'grey'}">settings</mat-icon>
           </div>
-          <p class="button-text" [ngStyle]="{'color': (this.moreSelected) ? 'blue' : 'grey'}">Settings</p>
+          <p class="button-text" [ngStyle]="{'color': (this.settingsSelected) ? 'blue' : 'grey'}">Settings</p>
         </div>
       </button>
     </mat-toolbar>

@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { WorkOrderStatusDialogComponent } from './work-order-status-dialog/work-order-status-dialog.component';
 import { Router } from '@angular/router';
 import { UserComment } from 'src/app/model/user-comment';
+import {Location} from '@angular/common';
 
 
 
@@ -29,15 +30,20 @@ export class WorkOrderInfoComponent implements OnInit {
     new UserComment('User 6', new Date(), 'Testing Comment 6'),
     new UserComment('User 7', new Date(), 'Testing Comment 7')
   ];
-
+ 
   constructor(private route: ActivatedRoute,
     private router: Router,
-    public dialog: MatDialog) { }
+    public dialog: MatDialog,
+    private location: Location) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       this.orderId = params['id'];
     });
+  }
+
+  backClicked() {
+    this.location.back();
   }
 
   openDialog(currentStatus: string, newStatus: string): void {

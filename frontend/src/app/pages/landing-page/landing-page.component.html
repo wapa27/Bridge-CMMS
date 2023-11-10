@@ -2,18 +2,16 @@
   <div class="header-wrapper">
     <h2 class="h2">Announcements</h2>
   </div>
-  <mat-list-item class='list-item' *ngFor="let announcement of testAnnouncements; last as last">
+  <mat-list-item class='list-item' *ngFor="let announcement of testAnnouncements; last as last"
+  (click)="this.goToAnnouncement(announcement.announcementId)">
     <div style="display: flex; justify-content: left; padding-left: 10px">
       <div style="height: fit-content; margin: 0.5% 2% 0 0;">
-        <i *ngIf="announcement=='Fix Header at terminal C, berth 4, door 2'" class="fas fa-wrench icon"
-          style="color:black"></i>
-        <i *ngIf=" announcement=='All Hands Meeting featuring president of DIA'" class=" fas fa-bullhorn icon"
-          style="color: black;"></i>
-        <i *ngIf="announcement=='Replace Transformer at terminal C, berth 4, door 2'" class="fas fa-wrench icon"
-          style="color: black;"></i>
+        <i *ngIf="this.getAnnouncementType(announcement.announcementType)=='fix'"><mat-icon>build</mat-icon></i>
+        <i *ngIf="this.getAnnouncementType(announcement.announcementType)=='install'"><mat-icon>build</mat-icon></i>
+        <i *ngIf="this.getAnnouncementType(announcement.announcementType)=='meeting'"><mat-icon>announcement</mat-icon></i>
       </div>
 
-      <h3 mat-line style="color: black; margin: 0 0 0 7px; width: fit-content">{{announcement}}</h3>
+      <h3 mat-line style="color: black; margin: 0 0 0 7px; width: fit-content">{{announcement.title}}</h3>
     </div>
   </mat-list-item>
 </div>
@@ -25,19 +23,12 @@
     (click)="this.goToWorkOrderInfo(workOrder.orderID)">
     <div style="display: flex; justify-content: left; padding-left: 10px">
       <div style="height: fit-content; margin: 0.5% 2% 0 0;">
-        <i *ngIf="workOrder.title=='Install Door at terminal A, berth 1, door 1'" class="fas fa-wrench icon"
-          style="color:black"></i>
-        <i *ngIf=" workOrder.title=='Install Door at terminal A, berth 1, door 2'" class=" fas fa-wrench icon"
-          style="color: black;"></i>
-        <i *ngIf="workOrder.title=='Install Door at terminal A, berth 1, door 3'" class="fas fa-wrench icon"
-          style="color: black;"></i>
-        <i *ngIf="workOrder.title=='Maintenance Header 1 at terminal B'" class="fas fa-wrench icon"
-          style="color: black;"></i>
-        <i *ngIf="workOrder.title=='Maintenance Header 2 at terminal B'" class="fas fa-wrench icon"
-          style="color: black;"></i>
+        <i *ngIf="this.getAnnouncementType(workOrder.type)=='fix'"><mat-icon>build</mat-icon></i>
+        <i *ngIf="this.getAnnouncementType(workOrder.type)=='install'"><mat-icon>build</mat-icon></i>
+        <i *ngIf="this.getAnnouncementType(workOrder.type)=='meeting'"><mat-icon>announcement</mat-icon></i>
       </div>
 
       <h3 mat-line style="color: black; margin: 0 0 0 7px; width: fit-content">{{workOrder.title}}</h3>
     </div>
   </mat-list-item>
-</div>
+</div> 

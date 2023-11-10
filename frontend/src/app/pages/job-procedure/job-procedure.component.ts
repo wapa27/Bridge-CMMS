@@ -8,6 +8,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { WorkOrderStatusDialogComponent } from '../work-order-info/work-order-status-dialog/work-order-status-dialog.component';
 import { JobProcedureDialogComponent } from './job-procedure-dialog/job-procedure-dialog.component';
 import { UserComment } from 'src/app/model/user-comment';
+import {Location} from '@angular/common';
+
 
 
 
@@ -23,7 +25,8 @@ export class JobProcedureComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
     private router: Router,
-    public dialog: MatDialog) { }
+    public dialog: MatDialog,
+    private location: Location) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
@@ -31,6 +34,10 @@ export class JobProcedureComponent implements OnInit {
       this.setProcedureTasks();
       let testkType: TaskType = TaskType.commentTask;
     });
+  }
+
+  backClicked() {
+    this.location.back();
   }
 
   private setProcedureTasks(): void {

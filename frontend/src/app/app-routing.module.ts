@@ -6,6 +6,7 @@ import { WorkOrderInfoComponent } from './pages/work-order-info/work-order-info.
 import { JobProcedureComponent } from './pages/job-procedure/job-procedure.component';
 import { ItemLookupComponent } from './pages/item-lookup/item-lookup.component';
 import { ComponentInfoComponent } from './pages/component-info/component-info.component';
+import { AnnouncementPageComponent } from './pages/announcement-page/announcement-page.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'work-order-info/:id', component: WorkOrderInfoComponent },
   { path: 'job-procedure/:id', component: JobProcedureComponent },
   { path: 'item-lookup', component: ItemLookupComponent },
-  { path: 'component-info', component: ComponentInfoComponent }
+  { path: 'component-info', component: ComponentInfoComponent },
+  { path: 'announcement-page/:id', component: AnnouncementPageComponent }
 ];
 
 @NgModule({

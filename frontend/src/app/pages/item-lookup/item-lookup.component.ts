@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { Component as Item } from '../../model/component';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-item-lookup',
@@ -7,6 +10,12 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./item-lookup.component.scss']
 })
 export class ItemLookupComponent implements OnInit {
+
+  constructor(private router: Router) { }
+
+  ngOnInit(): void {
+    // dataSource = this.components;
+  }
 
   searchItem: string[] = [
     'Phoneix Sky Harbor',
@@ -18,44 +27,25 @@ export class ItemLookupComponent implements OnInit {
     'Hartfield Jackson International',
   ];
 
-  public itemLookup(userInput: string) {
+    displayedColumns: string[] = ['name', 'location', 'id']
 
+   dataSource: Item[] = [];
+
+  public getItems(inputLocation: any, inputComponentId: any) {
+    this.dataSource = [
+      new Item('123', 'T3 N4', 'Phx', ['asd8f1', '8jgfajn'], ['123298'], []),
+      new Item('234', 'T4 S1', 'Phx', ['asd8f1', '8jgfajn'], ['123298'], []),
+      new Item('456', 'RCC N4', 'Phx', ['asd8f1', '8jgfajn'], ['123298'], []),
+      new Item('768', 'RCC N2', 'Phx', ['asd8f1', '8jgfajn'], ['123298'], []),
+      new Item('333', 'RCC N1', 'Phx', ['asd8f1', '8jgfajn'], ['123298'], []),
+      new Item('444', 'RCC S4', 'Phx', ['asd8f1', '8jgfajn'], ['123298'], []),
+      new Item('567', 'RCC S3', 'Phx', ['asd8f1', '8jgfajn'], ['123298'], []),
+      new Item('909', 'RCC S2', 'Phx', ['asd8f1', '8jgfajn'], ['123298'], []),
+    ];
   }
 
-  public getCategoryItems(parentItem: string) {
-    // API call to retrieve items
-    // Replace old searchItems with new ones
-    this.searchItem = [
-      'Rental Car Station',
-      '24th Street',
-      'Terminal 3',
-      'Terminal 4',
-      'West Economy Parking',
-      'East Economy Parking'
-    ]
+  goToWorkOrderInfo(workOrderId: string): void {
+    this.router.navigate(['work-order-info', workOrderId]);
   }
-
-  // activeCategoryItem: Map<string, string[]> = new Map();
-  // isActiveCategoryItem: Map<string, boolean> = new Map();
-
-  constructor() { }
-
-  ngOnInit(): void {
-    // this.searchItem.forEach(element => {
-    //   this.activeCategoryItem.set(element, ['Test Item']);
-    //   this.isActiveCategoryItem.set(element, false);
-    // });
-  }
-
-  // public getCategoryItems(selectedItem: string): string[] {
-  //   this.isActiveCategoryItem.set(selectedItem, true);
-  //   const subItems = this.activeCategoryItem.get(selectedItem);
-  //   return subItems !== undefined ? subItems : [];
-  // }
-
-  // public isCategoryExpanded(category: string): boolean {
-  //   const isActive = this.isActiveCategoryItem.get(category);
-  //   return isActive !== undefined ? isActive : false;
-  // }
 
 }

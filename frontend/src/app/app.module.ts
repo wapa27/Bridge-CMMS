@@ -26,6 +26,9 @@ import { JobProcedureDialogComponent } from './pages/job-procedure/job-procedure
 import { JobProcedureItemComponent } from './pages/job-procedure/job-procedure-item/job-procedure-item.component';
 import { ItemLookupComponent } from './pages/item-lookup/item-lookup.component';
 import { ComponentInfoComponent } from './pages/component-info/component-info.component';
+import { AnnouncementPageComponent } from './pages/announcement-page/announcement-page.component';
+import { MatTableModule } from '@angular/material/table'  
+
 
 @NgModule({
   declarations: [
@@ -40,7 +43,8 @@ import { ComponentInfoComponent } from './pages/component-info/component-info.co
     JobProcedureDialogComponent,
     JobProcedureItemComponent,
     ItemLookupComponent,
-    ComponentInfoComponent
+    ComponentInfoComponent,
+    AnnouncementPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,7 +60,8 @@ import { ComponentInfoComponent } from './pages/component-info/component-info.co
     MatCardModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatTabsModule
+    MatTabsModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

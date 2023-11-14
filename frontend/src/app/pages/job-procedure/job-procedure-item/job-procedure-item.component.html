@@ -62,13 +62,11 @@
       <span>{{comment.user}} - {{comment.date | date:"short"}}</span>
       <p>{{comment.comment}}</p>
     </div>
-    <div *ngIf="isAddComment" style="padding: 0 5px;">
+    <div *ngIf="isAddComment" style="padding: 0 5px;"> 
       <textarea style="width: -webkit-fill-available;" #userComment></textarea>
       <div style="display: flex; justify-content: end;">
         <button mat-raised-button color="warn" (click)="cancelComment()" style="margin-right:5px;">Cancel</button>
         <button mat-raised-button color="primary" (click)="pushComment(userComment.value)">Comment</button>
-        <!-- <button mat-raised-button color="primary" *ngIf="userComment.value.length > 0">Comment</button>
-        <button *ngIf="userComment.value.length == 0">Comment</button> -->
       </div>
     </div>
   </ng-container>
@@ -101,8 +99,6 @@
       <div style="display: flex; justify-content: end;">
         <button mat-raised-button color="warn" (click)="cancelComment()" style="margin-right:5px;">Cancel</button>
         <button mat-raised-button color="primary" (click)="pushComment(userComment.value)">Comment</button>
-        <!-- <button mat-raised-button color="primary" *ngIf="userComment.value.length > 0">Comment</button>
-        <button *ngIf="userComment.value.length == 0">Comment</button> -->
       </div>
     </div>
   </ng-container>

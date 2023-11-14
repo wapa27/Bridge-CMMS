@@ -1,7 +1,61 @@
-<!-- Upcoming Maintenance -->
+<div class="list-wrapper">
+    <div class="header-wrapper">
+      <span style="width: 33%; display: flex; flex-direction: column; justify-content: center;"><button (click)="this.backClicked()" style="background: inherit; border: none; width: 50%;"><mat-icon>keyboard_backspace</mat-icon></button></span>
+      <span style="width: 33%; text-align: center;"><h2 class="h2">{{this.itemId}}</h2></span>
+      <span style="width: 33%;">
+    </span>
+    </div>
+</div>
+<h3 class="h3">Maintenance Log</h3>
+<div *ngIf="maintenanceDataSource.length > 0" style="display: flex; justify-content: center;">
+  <table mat-table [dataSource]="maintenanceDataSource" class="mat-elevation-z8" style="width: 95%">
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef> Status </th>
+      <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+    </ng-container>
 
-<!-- Intallation Log -->
-<!-- Maintenance Log -->
-<!-- Component Specs -->
-<!-- Known Issues -->
-<!-- Comments -->
+    <ng-container matColumnDef="dueDate">
+      <th mat-header-cell *matHeaderCellDef> Due Date </th>
+      <td mat-cell *matCellDef="let element"> {{element.dueDate | date: "shortDate" }} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="goToWorkOrder(row.orderID)" class="row-hover"></tr>
+  </table>
+</div>
+
+<h3 class="h3">Scheduled Maintenance</h3>
+<div *ngIf="scheduledMaintenanceDataSource.length > 0" style="display: flex; justify-content: center;">
+  <table mat-table [dataSource]="scheduledMaintenanceDataSource" class="mat-elevation-z8" style="width: 95%">
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef> Status </th>
+      <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="dueDate">
+      <th mat-header-cell *matHeaderCellDef> Due Date </th>
+      <td mat-cell *matCellDef="let element"> {{element.dueDate | date: "shortDate" }} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="goToWorkOrder(row.orderID)" class="row-hover"></tr>
+  </table>
+</div>
+
+<h3 class="h3">Comments</h3>
+<div *ngIf="userComments.length > 0">
+  <div *ngFor="let comment of userComments" class="user-comment">
+    <span>{{comment.user}} - {{comment.date | date:"short"}}</span>
+    <p>{{comment.comment}}</p>
+  </div>
+</div>

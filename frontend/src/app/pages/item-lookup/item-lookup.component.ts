@@ -33,19 +33,19 @@ export class ItemLookupComponent implements OnInit {
 
   public getItems(inputLocation: any, inputComponentId: any) {
     this.dataSource = [
-      new Item('123', 'T3 N4', 'Phx', ['asd8f1', '8jgfajn'], ['123298'], []),
-      new Item('234', 'T4 S1', 'Phx', ['asd8f1', '8jgfajn'], ['123298'], []),
-      new Item('456', 'RCC N4', 'Phx', ['asd8f1', '8jgfajn'], ['123298'], []),
-      new Item('768', 'RCC N2', 'Phx', ['asd8f1', '8jgfajn'], ['123298'], []),
-      new Item('333', 'RCC N1', 'Phx', ['asd8f1', '8jgfajn'], ['123298'], []),
-      new Item('444', 'RCC S4', 'Phx', ['asd8f1', '8jgfajn'], ['123298'], []),
-      new Item('567', 'RCC S3', 'Phx', ['asd8f1', '8jgfajn'], ['123298'], []),
-      new Item('909', 'RCC S2', 'Phx', ['asd8f1', '8jgfajn'], ['123298'], []),
+      new Item('123', 'Header Unit', 'T3 N4 Phx', ['asd8f1', '8jgfajn'], ['123298'], []),
+      new Item('234', 'Header Unit', 'T4 S1 Phx', ['asd8f1', '8jgfajn'], ['123298'], []),
+      new Item('456', 'Header Unit', 'RCC N4 Phx', ['asd8f1', '8jgfajn'], ['123298'], []),
+      new Item('768', 'Header Unit', 'RCC N2 Phx', ['asd8f1', '8jgfajn'], ['123298'], []),
+      new Item('333', 'Header Unit', 'RCC N1 Phx', ['asd8f1', '8jgfajn'], ['123298'], []),
+      new Item('444', 'Header Unit', 'RCC S4 Phx', ['asd8f1', '8jgfajn'], ['123298'], []),
+      new Item('567', 'Header Unit', 'RCC S3 Phx', ['asd8f1', '8jgfajn'], ['123298'], []),
+      new Item('909', 'Header Unit', 'RCC S2 Phx', ['asd8f1', '8jgfajn'], ['123298'], []),
     ];
   }
 
-  goToWorkOrderInfo(workOrderId: string): void {
-    this.router.navigate(['work-order-info', workOrderId]);
+  goToItemInfo(componentId: string): void {
+    this.router.navigate(['component-info', componentId]);
   }
 
 }

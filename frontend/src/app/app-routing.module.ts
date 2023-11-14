@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { ScheduleComponent } from './pages/schedule/schedule.component';
@@ -17,7 +17,8 @@ const routes: Routes = [
   { path: 'item-lookup', component: ItemLookupComponent },
   { path: 'component-info', component: ComponentInfoComponent },
   { path: 'announcement-page/:id', component: AnnouncementPageComponent },
-  { path: 'settings', component: SettingsComponent }
+  { path: 'settings', component: SettingsComponent },
+  { path: 'component-info/:id', component: ComponentInfoComponent }
 ];
 
 @NgModule({

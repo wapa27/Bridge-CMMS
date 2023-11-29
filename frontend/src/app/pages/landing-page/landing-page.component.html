@@ -3,14 +3,14 @@
     <h2 class="h2">Announcements</h2>
   </div>
   <mat-list-item class='list-item' *ngFor="let announcement of testAnnouncements; last as last"
-  (click)="this.goToAnnouncement(announcement.announcementId)">
+    (click)="this.goToAnnouncement(announcement.announcementId)">
     <div style="display: flex; justify-content: left; padding-left: 10px">
       <div style="height: fit-content; margin: 0.5% 2% 0 0;">
         <i *ngIf="this.getAnnouncementType(announcement.announcementType)=='fix'"><mat-icon>build</mat-icon></i>
         <i *ngIf="this.getAnnouncementType(announcement.announcementType)=='install'"><mat-icon>build</mat-icon></i>
-        <i *ngIf="this.getAnnouncementType(announcement.announcementType)=='meeting'"><mat-icon>announcement</mat-icon></i>
+        <i
+          *ngIf="this.getAnnouncementType(announcement.announcementType)=='meeting'"><mat-icon>announcement</mat-icon></i>
       </div>
-
       <h3 mat-line style="color: black; margin: 0 0 0 7px; width: fit-content">{{announcement.title}}</h3>
     </div>
   </mat-list-item>
@@ -27,8 +27,7 @@
         <i *ngIf="this.getAnnouncementType(workOrder.type)=='install'"><mat-icon>build</mat-icon></i>
         <i *ngIf="this.getAnnouncementType(workOrder.type)=='meeting'"><mat-icon>announcement</mat-icon></i>
       </div>
-
       <h3 mat-line style="color: black; margin: 0 0 0 7px; width: fit-content">{{workOrder.title}}</h3>
     </div>
   </mat-list-item>
-</div> 
+</div>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
-import { Component as Item } from '../../model/component';
+import { Item } from '../../model/item';
 import { Router } from '@angular/router';
 
 
@@ -27,9 +27,9 @@ export class ItemLookupComponent implements OnInit {
     'Hartfield Jackson International',
   ];
 
-    displayedColumns: string[] = ['name', 'location', 'id']
+  displayedColumns: string[] = ['name', 'location', 'id']
 
-   dataSource: Item[] = [];
+  dataSource: Item[] = [];
 
   public getItems(inputLocation: any, inputComponentId: any) {
     this.dataSource = [

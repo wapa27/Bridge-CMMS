@@ -5,6 +5,7 @@ import { AnnouncementType } from 'src/app/model/announcementType';
 import { UrgencyStatus } from 'src/app/model/urgency-status';
 import { WorkOrder } from 'src/app/model/work-order';
 import { WorkOrderStatus } from 'src/app/model/work-order-status';
+import { WorkOrderService } from 'src/app/services/work-order.service';
 
 @Component({
   templateUrl: './landing-page.component.html',
@@ -15,9 +16,14 @@ export class LandingPageComponent implements OnInit {
   testAnnouncements: Announcement[] = [];
   testWorkOrders: WorkOrder[] = [];
 
-  constructor(private router: Router) { }
+  constructor(
+    private workOrderService: WorkOrderService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+    console.log('in landing page')
+    this.workOrderService.getWorkOrdersByUserId();
     this.testAnnouncements = [
       new Announcement('All Hands Meeting featuring president of DIA', AnnouncementType.meeting, '234'),
       new Announcement('Fix found for people counter undercounts', AnnouncementType.install, '345'),

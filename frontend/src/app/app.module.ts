@@ -28,10 +28,12 @@ import { ItemLookupComponent } from './pages/item-lookup/item-lookup.component';
 import { ComponentInfoComponent } from './pages/component-info/component-info.component';
 import { AnnouncementPageComponent } from './pages/announcement-page/announcement-page.component';
 import { MatTableModule } from '@angular/material/table';
-import { SettingsComponent } from './pages/settings/settings.component'  
-import {MatExpansionModule} from '@angular/material/expansion';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { SettingsComponent } from './pages/settings/settings.component'
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { WorkOrderService } from './services/work-order.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -71,9 +73,10 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     MatTableModule,
     MatExpansionModule,
     MatFormFieldModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [WorkOrderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
